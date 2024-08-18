@@ -1,28 +1,52 @@
 import React from "react";
 
 function SessionPanel({ sessionLength, incrementSession, decrementSession }) {
+  console.log("mi estado de la sesion", sessionLength);
+
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col box-content">
       <h2
         id="session-label"
         className="text-yellow-100 font-semibold text-2xl text-center"
       >
-        Session Time
+        <span id="timer-label">Session Time</span>
       </h2>
-      <button
-        id="session-decrement"
-        className="size-8 focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
-        onClick={decrementSession}
-      >
-        -
+      <button id="session-increment">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="size-6"
+          onClick={incrementSession}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18"
+          />
+        </svg>
       </button>
-      <span className="text-2xl">{sessionLength} minutes</span>
-      <button
-        id="session-increment"
-        className="size-8 focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
-        onClick={incrementSession}
-      >
-        +
+      <span className="text-2xl" id="session-length">
+        {sessionLength}
+      </span>
+      <button id="session-decrement">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="size-6"
+          onClick={decrementSession}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"
+          />
+        </svg>
       </button>
     </div>
   );
