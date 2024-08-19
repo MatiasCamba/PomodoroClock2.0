@@ -4,7 +4,7 @@ import linkedin from "../../assets/linkedin.png";
 
 function Footer() {
   return (
-    <footer className="flex flex-1 align-middle items-center justify-center gap-8 absolute  inset-x-0 bottom-0 ">
+    <footer className="flex flex-1 align-middle items-center justify-center gap-8 inset-x-0 bottom-0 opacity-80">
       <span>
         © Matias Camba <sup>®</sup>
       </span>
