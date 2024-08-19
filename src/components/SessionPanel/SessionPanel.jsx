@@ -4,14 +4,16 @@ function SessionPanel({ sessionLength, incrementSession, decrementSession }) {
   console.log("mi estado de la sesion", sessionLength);
 
   return (
-    <div className="flex flex-col box-content">
+    <div className="flex flex-col justify-center text-center gap-4">
       <h2
         id="session-label"
-        className="text-yellow-100 font-semibold text-2xl text-center"
+        className="font-semibold text-2xl text-center font-montserrat"
       >
-        <span id="timer-label">Session Time</span>
+        <span id="timer-label" className="font-montserrat">
+          Session Time
+        </span>
       </h2>
-      <button id="session-increment">
+      <button id="session-increment" className="justify-center flex flex-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -28,10 +30,10 @@ function SessionPanel({ sessionLength, incrementSession, decrementSession }) {
           />
         </svg>
       </button>
-      <span className="text-2xl" id="session-length">
+      <span className="text-2xl font-Oswald font-bold" id="session-length">
         {sessionLength}
       </span>
-      <button id="session-decrement">
+      <button id="session-decrement" className="justify-center flex flex-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

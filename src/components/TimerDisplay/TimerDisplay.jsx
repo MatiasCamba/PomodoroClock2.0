@@ -9,11 +9,11 @@ function TimerDisplay({ timeLeft, isSession }) {
       .padStart(2, "0")}`;
   };
   return (
-    <div className="bg-amber-100 w-50 h-48 flex flex-col justify-center text-center">
-      <h3 className="text-2xl text-orange-950 font-semibold" id="timer-label">
+    <div className="flex flex-col border-2 shadow-lg shadow-slate-500/90 text-center mt-20 h-auto p-8 w-36">
+      <h3 className="text-2xl font-semibold font-Oswald mb-8" id="timer-label">
         {isSession ? "Session" : "Break"}
       </h3>
-      <p className="text-3xl font-semibold text-orange-800" id="time-left">
+      <p className="text-3xl font-semibold m-0 p-0" id="time-left">
         {formatTime(timeLeft)}
       </p>
     </div>

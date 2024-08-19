@@ -1,9 +1,13 @@
 import "./App.css";
+//Hooks
 import { useState, useEffect } from "react";
+//Components
 import BreakPanel from "./components/BreakPanel/BreakPanel";
 import SessionPanel from "./components/SessionPanel/SessionPanel";
+import Footer from "./components/Footer/Footer";
 import TimerDisplay from "./components/TimerDisplay/TimerDisplay";
 import Controls from "./components/Controls/Controls";
+//Assets
 import beep from "../src/assets/beep.mp3";
 
 function App() {
@@ -36,14 +40,13 @@ function App() {
     }
     return () => clearInterval(timer);
   }, [isRunning, isSession, breakLength, sessionLength]);
-  
-
 
   const incrementBreak = () => setBreakLength((prev) => Math.min(prev + 1, 60));
   const decrementBreak = () => setBreakLength((prev) => Math.max(prev - 1, 1));
   const incrementSession = () =>
     setSessionLength((prev) => Math.min(prev + 1, 60));
-  const decrementSession = () =>setSessionLength((prev) => Math.max(prev - 1, 1));
+  const decrementSession = () =>
+    setSessionLength((prev) => Math.max(prev - 1, 1));
 
   const start = () => setIsRunning(true);
   const pause = () => setIsRunning(false);
@@ -56,12 +59,12 @@ function App() {
   };
 
   return (
-    <div className="bg-background border-2">
-      <h1 className="h-16 text-center justify-center bg-amber-100 font-bold text-3xl text-orange-950">
+    <>
+    <div className="bg-background flex flex-col justify-center items-center">
+      <h1 className="h-16 text-center justify-center font-bold text-4xl font-Oswald mt-8">
         Pomodoro Clock
       </h1>
-      <hr className="border-none bg-black h-2" />
-      <div className="flex flex-auto justify-center gap-40 ">
+      <div className="flex flex-auto justify-center gap-40 items-center align-middle mt-8">
         <BreakPanel
           breakLength={breakLength}
           incrementBreak={incrementBreak}
@@ -76,6 +79,8 @@ function App() {
       <TimerDisplay timeLeft={timeLeft} isSession={isSession} />
       <Controls start={start} pause={pause} restart={restart} />
     </div>
+      <Footer/>
+      </>
   );
 }
 
