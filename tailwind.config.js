@@ -7,12 +7,15 @@ export default {
       fontFamily: {
         'montserrat': ['"Montserrat"', 'sans-serif'],
         'Oswald': ['"Oswald"', 'sans-serif'],
+        'OpenSans':['"Open Sans"',' sans-serif']
       },
       colors: {
-        background: "#64231c",
+        background: "#343563",
         btnshadows: "#f1aea1",
         font: "#5f7174",
         backgroundButton: "#777271",
+        buttonSession: "#ff914c",
+        buttonBreak:"#0097b2",
         ...colors,
       },
       animation: {

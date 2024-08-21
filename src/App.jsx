@@ -6,7 +6,7 @@ import BreakPanel from "./components/BreakPanel/BreakPanel";
 import SessionPanel from "./components/SessionPanel/SessionPanel";
 import Footer from "./components/Footer/Footer";
 import TimerDisplay from "./components/TimerDisplay/TimerDisplay";
-import Controls from "./components/Controls/Controls";
+
 //Assets
 import beep from "../src/assets/beep.mp3";
 
@@ -31,7 +31,7 @@ function App() {
           if (prev === 0) {
             const audio = new Audio(beep);
             audio.play();
-            setIsSession((prevIsSession) => !prevIsSession);
+            setIsSession(!isSession);
             return isSession ? breakLength * 60 : sessionLength * 60;
           }
           return prev - 1;
@@ -59,28 +59,28 @@ function App() {
   };
 
   return (
-    <>
+    
     <div className="bg-background flex flex-col justify-center items-center">
-      <h1 className="h-16 text-center justify-center font-bold text-4xl font-Oswald mt-8">
-        Pomodoro Clock
+      <h1 className="h-16 text-center justify-center font-bold text-4xl font-montserrat mt-8">
+        POMODORO CLOCK
       </h1>
-      <div className="flex flex-auto justify-center gap-40 items-center align-middle mt-8">
-        <BreakPanel
-          breakLength={breakLength}
-          incrementBreak={incrementBreak}
-          decrementBreak={decrementBreak}
-        />
+      <div className="flex flex-col justify-center gap-20 items-center align-middle mt-8">
         <SessionPanel
           sessionLength={sessionLength}
           incrementSession={incrementSession}
           decrementSession={decrementSession}
         />
+        <BreakPanel
+          breakLength={breakLength}
+          incrementBreak={incrementBreak}
+          decrementBreak={decrementBreak}
+        />
       </div>
-      <TimerDisplay timeLeft={timeLeft} isSession={isSession} />
-      <Controls start={start} pause={pause} restart={restart} />
-    </div>
+      <TimerDisplay timeLeft={timeLeft} isSession={isSession} start={start} restart={restart} isRunning={isRunning} pause={pause}/>
+    
       <Footer/>
-      </>
+    </div>
+      
   );
 }
 
