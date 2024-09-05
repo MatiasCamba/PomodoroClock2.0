@@ -31,6 +31,18 @@
       "sizes": "640x320",
       "type": "image/png",
       "form_factor": "wide"
+    },
+    {
+      "src": "/assets/github.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/assets/linkedin.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "wide"
     }
   ]
 }
