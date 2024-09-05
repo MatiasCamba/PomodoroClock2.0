@@ -1,26 +1,36 @@
 {
-    "name": "Nombre de tu App",
-    "short_name": "App",
-    "start_url": "https://mopodorov2.netlify.app/",
-    "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#000000",
-    "icons": [
-   
-    ],
-    "screenshots": [
-      {
-        "src": "/assets/github.png",
-        "sizes": "540x720",
-        "type": "image/png",
-        "form_factor": "narrow"
-      },
-      {
-        "src": "/assets/linkedin.png",
-        "sizes": "1080x1920",
-        "type": "image/png",
-        "form_factor": "standard"
-      }
-    ]
-  }
-  
+  "name": "Nombre de tu App",
+  "short_name": "App",
+  "start_url": "https://mopodorov2.netlify.app/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [],
+  "screenshots": [
+    {
+      "src": "/assets/github.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/assets/linkedin.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "standard"
+    },
+
+    {
+      "src": "/assets/linkedin.png",
+      "sizes": "640x320",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/assets/github.png",
+      "sizes": "640x320",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ]
+}
