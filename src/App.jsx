@@ -8,7 +8,7 @@ import Footer from "./components/Footer/Footer";
 import TimerDisplay from "./components/TimerDisplay/TimerDisplay";
 
 //Assets
-import beep from "../src/assets/beep.mp3";
+import beep from "../public/assets/beep.mp3";
 
 function App() {
   const [breakLength, setBreakLength] = useState(5);
