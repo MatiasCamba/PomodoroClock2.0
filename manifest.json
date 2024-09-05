@@ -31,5 +31,8 @@
       "type": "image/png",
       "form_factor": "wide"
     }
+  ],
+  "web_accessible_resources": [
+    "/assets/beep.mp3"
   ]
 }
