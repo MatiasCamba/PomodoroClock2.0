@@ -1,7 +1,7 @@
 {
     "name": "Nombre de tu App",
     "short_name": "App",
-    "start_url": "/",
+    "start_url": "https://mopodorov2.netlify.app/",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#000000",
