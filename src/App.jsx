@@ -9,7 +9,7 @@ import TimerDisplay from "./components/TimerDisplay/TimerDisplay";
 
 //Assets
 import beep from "../public/assets/beep.mp3";
-import Modal from "./components/modal";
+import Modal from "./components/Modal";
 
 function App() {
   const [breakLength, setBreakLength] = useState(5);
@@ -78,7 +78,7 @@ function App() {
         />
       </div>
       <TimerDisplay timeLeft={timeLeft} isSession={isSession} start={start} restart={restart} isRunning={isRunning} pause={pause}/>
-      <Modal/>
+      <Modal/> 
       <Footer/>
     </div>
       

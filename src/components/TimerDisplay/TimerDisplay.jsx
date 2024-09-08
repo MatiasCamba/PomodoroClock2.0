@@ -8,7 +8,7 @@ function TimerDisplay({
   isRunning,
   pause,
 }) {
-  console.log("mi estado", isSession);
+  
   const formatTime = (time) => {
     const minutes = Math.floor(time / 60);
     const seconds = time % 60;
