@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import {useRef } from "react"
 
 function Modal() {
     const modalRef = useRef();
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 sm:w-full h-full">
       <form ref={modalRef} className="mt-10">
         <div className="flex flex-col items-center justify-center">
           <div className="w-full max-w-md bg-gray-800 rounded-lg shadow-md p-6">
