@@ -1,13 +1,16 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
+
 
 function SessionPanel({ sessionLength, incrementSession, decrementSession }) {
+  const { t } = useTranslation();
   return (
     <div className="flex flex-col items-center">
       <h2
         id="session-label"
         className="font-semibold text-4xl text-center font-OpenSans mb-6"
       >
-        Session Time
+        {t('session')}
       </h2>
       <div className="bg-buttonSession rounded-full flex flex-1 p-4 w-36">
         <button

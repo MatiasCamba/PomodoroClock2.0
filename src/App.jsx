@@ -1,6 +1,6 @@
 import "./App.css";
 //Hooks
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 //Components
 import BreakPanel from "./components/BreakPanel/BreakPanel";
 import SessionPanel from "./components/SessionPanel/SessionPanel";
@@ -10,7 +10,15 @@ import TimerDisplay from "./components/TimerDisplay/TimerDisplay";
 //Assets
 import beep from "../public/assets/beep.mp3";
 
+//Language Change
+import { I18nextProvider } from "react-i18next";
+import i18n from "./config/i18Config";
+import { useTranslation } from "react-i18next";
+import LanguageSelector from "./components/LanguageSelector/LanguageSelector";
+
 function App() {
+  const { t } = useTranslation();
+
   const [breakLength, setBreakLength] = useState(5);
   const [sessionLength, setSessionLength] = useState(25);
   const [timeLeft, setTimeLeft] = useState(sessionLength * 60);
@@ -59,27 +67,35 @@ function App() {
   };
 
   return (
-    
-    <div className="bg-background flex flex-col justify-center items-center">
-      <h1 className="h-16 text-center justify-center font-bold text-4xl font-montserrat mt-8">
-        POMODORO CLOCK
-      </h1>
-      <div className="flex flex-col justify-center gap-20 items-center align-middle mt-8">
-        <SessionPanel
-          sessionLength={sessionLength}
-          incrementSession={incrementSession}
-          decrementSession={decrementSession}
+    <I18nextProvider i18n={i18n}>
+      <div className="bg-background flex flex-col justify-center items-center">
+        <LanguageSelector />
+        <h1 className="h-16 text-center justify-center font-bold text-4xl font-montserrat mt-8">
+          {t(`title`)}
+        </h1>
+        <div className="flex flex-col justify-center gap-20 items-center align-middle mt-8">
+          <SessionPanel
+            sessionLength={sessionLength}
+            incrementSession={incrementSession}
+            decrementSession={decrementSession}
+          />
+          <BreakPanel
+            breakLength={breakLength}
+            incrementBreak={incrementBreak}
+            decrementBreak={decrementBreak}
+          />
+        </div>
+        <TimerDisplay
+          timeLeft={timeLeft}
+          isSession={isSession}
+          start={start}
+          restart={restart}
+          isRunning={isRunning}
+          pause={pause}
         />
-        <BreakPanel
-          breakLength={breakLength}
-          incrementBreak={incrementBreak}
-          decrementBreak={decrementBreak}
-        />
+        <Footer />
       </div>
-      <TimerDisplay timeLeft={timeLeft} isSession={isSession} start={start} restart={restart} isRunning={isRunning} pause={pause}/>
-      <Footer/>
-    </div>
-      
+    </I18nextProvider>
   );
 }
 
