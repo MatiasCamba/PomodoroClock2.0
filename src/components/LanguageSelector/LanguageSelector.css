@@ -1,0 +1,10 @@
+.flag-container ul {
+  @apply bg-slate-900 rounded-md;
+}
+
+.flag-container button {
+  @apply bg-slate-800 text-white text-2xl font-mono rounded-lg;
+}
+.flag-container span {
+  @apply bg-slate-800 text-white justify-center rounded-md p-1;
+}

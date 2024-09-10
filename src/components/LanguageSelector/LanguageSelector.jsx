@@ -30,6 +30,7 @@ function LanguageSelector() {
       countries={["ES", "US"]}
       customLabels={{ ES: "ES", US: "US" }}
       onSelect={handleLangSelection}
+      className="flag-container"
     />
   );
 }
