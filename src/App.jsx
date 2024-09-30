@@ -7,10 +7,10 @@ import SessionPanel from "./components/SessionPanel/SessionPanel";
 import Footer from "./components/Footer/Footer";
 import TimerDisplay from "./components/TimerDisplay/TimerDisplay";
 
-//Assets
+
 import beep from "../public/assets/beep.mp3";
 
-//Language Change
+
 import { I18nextProvider } from "react-i18next";
 import i18n from "./config/i18Config";
 import { useTranslation } from "react-i18next";
