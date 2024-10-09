@@ -71,7 +71,7 @@ function App() {
       <div className="bg-background flex flex-col justify-center items-center">
         <LanguageSelector />
         <h1 className="h-16 text-center justify-center font-bold text-4xl font-montserrat mt-8">
-          {t(`title`)}
+          {t(`Temporizador Pomodoro`)}
         </h1>
         <div className="flex flex-col justify-center gap-20 items-center align-middle mt-8">
           <SessionPanel
