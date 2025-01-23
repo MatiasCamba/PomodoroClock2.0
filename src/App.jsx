@@ -1,6 +1,6 @@
 import "./App.css";
 //Hooks
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect } from "react";
 //Components
 import BreakPanel from "./components/BreakPanel/BreakPanel";
 import SessionPanel from "./components/SessionPanel/SessionPanel";
@@ -9,7 +9,7 @@ import TimerDisplay from "./components/TimerDisplay/TimerDisplay";
 
 
 import beep from "../public/assets/beep.mp3";
-
+import InstallButton from "./components/pwaButton";
 
 import { I18nextProvider } from "react-i18next";
 import i18n from "./config/i18Config";
@@ -93,6 +93,8 @@ function App() {
           isRunning={isRunning}
           pause={pause}
         />
+       
+       <InstallButton/>
         <Footer />
       </div>
     </I18nextProvider>
